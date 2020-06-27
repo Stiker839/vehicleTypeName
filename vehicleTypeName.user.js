@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         vehicleTypeName
 // @namespace    http:///
-// @version      1.0
+// @version      1.1
 // @description  Add the vehicle type name to the available vehicle list.
 // @author       MisteryMan
 // @match        *://*.meldkamerspel.com/missions/*
@@ -12,6 +12,20 @@
 // ==/UserScript==
 
 (function() {
+    /* Configuration
+    Use the below settings to adjust for the color of the text to your liking.
+    the website "https://htmlcolorcodes.com/" can be used to figure out the
+    color code you like.
+    */
+    var lightColor = "#E20000"; // Color for light/standard theme
+    var darkColor = "#FF0000"; // Color for dark theme
+    
+    // DO NOT ADJUST ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+    // YOU HAVE BEEN WARNED!
+    
+    if ($("body").hasClass("dark")) { var fontColor = darkColor; }
+    else { var fontColor = lightColor; }
+   
     'use strict';
     vehicleTypes();
     async function vehicleTypes() {
@@ -23,7 +37,7 @@
             var vehicleID = vehicleChildren[0].firstElementChild.getAttribute("value");
             var searchParam = "#vehicleTypeText_" + vehicleID;
             if (!document.getElementById("vehicleTypeText_" + vehicleID)) {
-                vehicleChildren[2].firstElementChild.innerHTML = innerHTML + "<span id='vehicleTypeText_" + vehicleID + "' style='color: #E20000; font-size: x-small' class='pull-right'>(" + vehicleType + ")</span>";
+                vehicleChildren[2].firstElementChild.innerHTML = innerHTML + "<span id='vehicleTypeText_" + vehicleID + "' style='color: " + fontColor + "; font-size: small' class='pull-right'>(" + vehicleType + ")</span>";
             }
         }
     };
