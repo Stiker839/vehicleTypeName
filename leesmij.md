@@ -2,7 +2,7 @@
  Voegt voertuig type naam toe aan je uitruk lijst in het missie scherm.
 Voorbeeld:
  
- ![Voorbeeld](images/example.png)
+ ![Voorbeeld](images/voorbeeld.png)
  
  Klik [hier](https://github.com/MisteryMan/vehicleTypeName/raw/master/vehicleTypeName.user.js) om het script te installeren.
  
