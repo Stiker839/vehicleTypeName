@@ -8,6 +8,8 @@
 // @match        *://meldkamerspel.com/missions/*
 // @match        *://*.missionchief.com/missions/*
 // @match        *://missionchief.com/missions/*
+// @match        *://*.missionchief.co.uk/missions/*
+// @match        *://missionchief.co.uk/missions/*
 // @grant        none
 // ==/UserScript==
 
